@@ -1,0 +1,52 @@
+body {
+    text-align: center;
+}
+.container {
+    display: block;
+    text-align: -webkit-center;
+}
+#days {
+ display: flex;
+ flex-direction: row;
+ width: 500px;
+   
+}
+.detail_weather_row:first-child {
+    display: none;
+}
+.day {
+    padding: 10px;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.day div:first-child {
+    display: none;
+}
+
+.day:hover {
+    background-color: bisque;
+}
+
+#detail_data{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 400px;
+    width: 500px;
+    background-color: aliceblue;
+}
+
+.detail_weather_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 13px;
+}
+
+.detail_weather_row div {
+    padding: 20px;
+}
