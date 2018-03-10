@@ -1,52 +1,79 @@
-body {
-    text-align: center;
-}
-.container {
-    display: block;
-    text-align: -webkit-center;
-}
-#days {
- display: flex;
- flex-direction: row;
- width: 500px;
-   
-}
-.detail_weather_row:first-child {
-    display: none;
-}
-.day {
-    padding: 10px;
-    width: 40%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    cursor: pointer;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.day div:first-child {
-    display: none;
+body {
+    font-family: sans-serif;
+    background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.search-area {
+    margin-top: 15px;
+}
+
+#cities_input {
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+#days {
+    display: flex;
+    flex-direction: row;
+    margin-top: 35px;
+}
+
+.day {
+    padding: 7px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+
+.day:not(:last-child) {
+    margin-right: 5px;
 }
 
 .day:hover {
-    background-color: bisque;
+    border-color: #fff;
 }
 
-#detail_data{
+.day.selected {
+    border-color: #fff;
+}
+
+.condition {
+    margin-top: 40px;
+    font-size: 36px;
+}
+
+.forecast-temperature-container {
     display: flex;
-    flex-direction: column;
-    overflow: auto;
-    height: 400px;
-    width: 500px;
-    background-color: aliceblue;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 42px;
 }
 
-.detail_weather_row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 13px;
+.forecast-temperature {
+    padding: 0 25px;
 }
 
-.detail_weather_row div {
-    padding: 20px;
+.forecast-temperature:after {
+    content: '℃';
+}
+
+.low-temperature:before {
+    content: '↓';
+}
+
+.high-temperature:before {
+    content: '↑';
 }
