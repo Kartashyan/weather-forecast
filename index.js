@@ -108,30 +108,6 @@ class DetailWeather {
     }
 }
 
-class ItemDetail {
-    constructor(name, value) {
-        this.name = name;
-        this.value = value;
-    }
-
-    get itemDetailDom() {
-        const nameElement = document.createElement("div");
-        const nameText = document.createTextNode(this.name);
-        nameElement.appendChild(nameText);
-
-        const valueElement = document.createElement("div");
-        const valueText = document.createTextNode(this.value);
-        valueElement.appendChild(valueText);
-
-        const detailRow = document.createElement("div");
-        detailRow.appendChild(nameElement);
-        detailRow.appendChild(valueElement);
-
-        return detailRow;
-    }
-
-}
-
 class Options {
     constructor(cities) {
         this.cities = cities;
@@ -170,7 +146,7 @@ class WeatherElement {
     }
 }
 
-//Helpers API
+//Helpers
 
 class Helpers {
     static fetchToRender(city) {
@@ -204,6 +180,7 @@ class Helpers {
 
         Helpers.reRenderDetailData(json, 0);
     }
+
     static reRenderDetailData(json, selectedDay) {
         Helpers.setSelectedDay(selectedDay);
 
@@ -243,8 +220,11 @@ window.onload = function () {
         Helpers.fetchCities(event.target.value);
 
     });
+
     citiesInput.addEventListener("change", event => {
+
         observableStore.selectedCity = event.target.value;
+
     });
 
     Helpers.fetchToRender(observableStore.selectedCity.toLowerCase());
